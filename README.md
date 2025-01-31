@@ -34,7 +34,8 @@ You can replace "llama3.2" with the name of the model you want to use, for examp
 
 In version 1.1 onwards, users can enable or disable the use of the prompt in the chat.php file. When enabled, the AI will answer questions based on the provided prompt, making the answers more specialized. If disabled, the AI will respond using general information without the prompt.
 You can control this behavior by setting the $usePrompt variable to true or false in the chat.php file, as shown below:
-### $usePrompt = $data["use_prompt"] ?? true;  // Set to true to use prompt, false to disable it
+
+$usePrompt = $data["use_prompt"] ?? true;  // Set to true to use prompt, false to disable it
 
 When '$usePrompt' is set to 'true', the AI will respond based on the prompt. When set to 'false', the AI will use other information and not rely on the prompt for its answers.
 
