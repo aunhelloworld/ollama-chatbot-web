@@ -30,7 +30,7 @@ http://localhost
    Open the chat.php file and find line 17 where the model is specified. By default, it should look like this:
 **"model" => "llama3.2"**
 
-You can replace "llama3.2" with the name of the model you want to use, for example, llama3.3 or any other available model.
+You can replace "llama3.2" with the name of the model you want to use, for example, llama3.2 or any other available model.
 
 ### 6. Test the Chat Interface
    Once you’ve completed the setup, go to http://localhost/index.php to test the chatbot. The chat.php file will handle all communication with the Ollama API to provide the AI chatbot functionality.
