@@ -1,7 +1,3 @@
-# Ollama Chatbot Web
-
-**Ollama Chatbot Web** is a beautifully designed web-based chatbot interface that integrates with Ollama to run AI models. In this project, I have tested the chatbot using the **Llama 3.2** model, which works very well with the platform. The goal of this project is to create a seamless and interactive chat experience with AI.
-
 ## Installation Guide
 
 Follow the steps below to set up **Ollama Chatbot Web** on your machine:
@@ -12,37 +8,10 @@ Start by installing **Ollama** on your machine. You can download it from the off
 
 ### 2. Install a Model
 After installing Ollama, you need to select and install a model. Go to the [Ollama Models Page](https://ollama.com/models), choose a model, and install it by running the following command in your terminal (example below):
-
-ollama run llama3.2
-
-If you ever need to remove a model, you can use the command:
-
-ollama rm llama3.2
-
-
-เข้าใจแล้วครับ นี่คือลิงก์ที่คุณสามารถก๊อปข้อความได้เลยจาก README.md ที่จัดระเบียบให้เหมาะกับการคัดลอกไปใช้งาน:
-
-markdown
-คัดลอก
-แก้ไข
-# Ollama Chatbot Web
-
-**Ollama Chatbot Web** is a beautifully designed web-based chatbot interface that integrates with Ollama to run AI models. In this project, I have tested the chatbot using the **Llama 3.2** model, which works very well with the platform. The goal of this project is to create a seamless and interactive chat experience with AI.
-
-## Installation Guide
-
-Follow the steps below to set up **Ollama Chatbot Web** on your machine:
-
-### 1. Install Ollama
-Start by installing **Ollama** on your machine. You can download it from the official Ollama website:  
-[Download Ollama](https://ollama.com/)
-
-### 2. Install a Model
-After installing Ollama, you need to select and install a model. Go to the [Ollama Models Page](https://ollama.com/models), choose a model, and install it by running the following command in your terminal (example below):
-###ollama run llama3.2
+**ollama run llama3.2**
 
 If you ever need to remove a model, you can use the command:
-###ollama rm llama3.2
+**ollama rm llama3.2**
 
 3. Install Laragon or XAMPP
 To host the chatbot locally, install Laragon or XAMPP. These tools will allow you to run a local server and access the chatbot interface via:
@@ -57,7 +26,7 @@ Copy the following files into your web server’s root directory (e.g., www fold
 
 5. Modify chat.php File
 Open the chat.php file and find line 17 where the model is specified. By default, it should look like this:
-###"model" => "llama3.2"
+**"model" => "llama3.2"**
 
 You can replace "llama3.2" with the name of the model you want to use, for example, llama3.3 or any other available model.
 
