@@ -1,6 +1,6 @@
 ## Installation Guide
 
-![Chatbot Interface](screenshot1-1.png)
+![Chatbot Interface](screenshot1-2.png)
 
    Follow the steps below to set up **Ollama Chatbot Web** on your machine:
 
