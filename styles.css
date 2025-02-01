@@ -17,6 +17,8 @@ body {
             background: white;
             border-bottom: 1px solid #e5e7eb;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 20;
         }
 
         .chat-messages {
@@ -39,24 +41,64 @@ body {
             padding: 1.5rem;
             background: white;
             border-top: 1px solid #e5e7eb;
+            position: relative;
+            z-index: 20;
+        }
+        .chat-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .chat-table th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .chat-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            background-color: white;
+        }
+
+        .chat-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .chat-table tr:hover td {
+            background-color: #f8fafc;
         }
 
         .message-bubble {
-            position: relative;
-            margin: 0.5rem 0;
+            animation: slideIn 0.3s ease-out;
         }
 
         .message-bubble.user {
+            margin-left: auto;
             background: #2563eb;
             color: white;
-            border-radius: 1rem 1rem 0.25rem 1rem;
+            border-radius: 0; /* ไม่โค้ง */
+            padding: 0.5rem 1rem; /* ปรับ padding ให้พอดี */
+            max-width: 80%; /* จำกัดความกว้างสูงสุด */
+            display: inline-block; /* ให้กล่องข้อความปรับตามเนื้อหา */
             box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1);
         }
 
         .message-bubble.ai {
+            margin-right: auto;
             background: white;
             border: 1px solid #e5e7eb;
-            border-radius: 1rem 1rem 1rem 0.25rem;
+            border-radius: 0; /* ไม่โค้ง */
+            padding: 0.5rem 1rem; /* ปรับ padding ให้พอดี */
+            max-width: 80%; /* จำกัดความกว้างสูงสุด */
+            display: inline-block; /* ให้กล่องข้อความปรับตามเนื้อหา */
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
@@ -64,11 +106,12 @@ body {
             position: absolute;
             bottom: 1rem;
             left: 2.5rem;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.25rem;
             background: white;
             border-radius: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             z-index: 10;
+            border: 1px solid #e5e7eb;
         }
 
         .typing-dot {
@@ -81,13 +124,8 @@ body {
             50% { transform: translateY(-4px); }
         }
 
-        textarea {
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        textarea:focus {
-            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1);
+        .message-content {
+            overflow-x: auto;
         }
 
         .message-content pre {
@@ -95,13 +133,57 @@ body {
             border-radius: 0.5rem;
             padding: 1rem;
             margin: 0.5rem 0;
+            overflow-x: auto;
         }
 
         .message-content code {
             font-size: 0.875rem;
+            padding: 0.2em 0.4em;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 0.25rem;
         }
 
-        /* Custom scrollbar */
+        .message-content pre code {
+            padding: 0;
+            background: transparent;
+        }
+
+        .message-content table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .message-content th,
+        .message-content td {
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .message-content th {
+            background: #f8fafc;
+        }
+
+        .message-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .message-content a {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+
+        .message-content blockquote {
+            border-left: 4px solid #e5e7eb;
+            margin: 1rem 0;
+            padding-left: 1rem;
+            color: #4b5563;
+        }
+
         #chatbox::-webkit-scrollbar {
             width: 6px;
         }
@@ -118,4 +200,23 @@ body {
 
         #chatbox::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
+        }
+
+        .error-message {
+            background: #fee2e2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin: 0.5rem 0;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
